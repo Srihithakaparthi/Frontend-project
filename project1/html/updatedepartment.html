@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Employee Department</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Update Employee Department</h2>
+    <div class="form-group">
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" id="employeeName" placeholder="Enter employee name">
+    </div>
+    <div class="form-group">
+        <label for="department">Select Department:</label>
+        <select id="department">
+            <option value="IT">IT</option>
+            <option value="HR">HR</option>
+            <option value="Finance">Finance</option>
+            <option value="Operations">Operations</option>
+        </select>
+    </div>
+    <button onclick="updateDepartment()">Update Department</button>
+</div>
+
+<script>
+function updateDepartment() {
+    var employeeName = document.getElementById('employeeName').value;
+    var department = document.getElementById('department').value;
+    
+    // Here you can implement the logic to update the department for the employee,
+    // for example, by sending an AJAX request to the server.
+    // For demonstration purposes, let's just log the values.
+    console.log('Employee Name:', employeeName);
+    console.log('Selected Department:', department);
+    
+    // You can add further logic here, like displaying a success message or updating UI.
+}
+</script>
+</body>
+</html>

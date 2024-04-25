@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Department Lookup</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
+    .form-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .form-container label, .form-container input, .form-container button {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .form-container button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div class="form-container">
+    <h2>Find Department </h2>
+    <label for="employeeId">Employee ID:</label>
+    <input type="text" id="employeeId">
+    <button onclick="lookupDepartment()">Department</button>
+    <div id="departmentResult"></div>
+</div>
+
+<script>
+    function lookupDepartment() {
+        var employeeId = document.getElementById('employeeId').value;
+        // Assuming you have some way to look up the department based on the employee ID
+        // Here, we'll simulate it with a simple object
+        var departments = {
+            '001': 'Finance',
+            '002': 'Human Resources',
+            '003': 'Marketing',
+            '004': 'Operations',
+            '005': 'IT',
+            // Add more employee IDs and departments as needed
+        };
+        var department = departments[employeeId];
+        var departmentResult = document.getElementById('departmentResult');
+        if (department) {
+            departmentResult.innerText = 'Department: ' + department;
+        } else {
+            departmentResult.innerText = 'Department not found for employee ID: ' + employeeId;
+        }
+    }
+</script>
+</body>
+</html>

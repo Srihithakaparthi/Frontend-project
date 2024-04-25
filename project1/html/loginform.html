@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Attendance</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#message {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Employee Attendance</h2>
+    <form id="attendanceForm">
+      <label for="employeeId">Employee ID:</label>
+      <input type="text" id="employeeId" name="employeeId" required>
+      <button type="submit">Log In</button>
+    </form>
+    <div id="message"></div>
+  </div>
+  <script>
+    document.getElementById('attendanceForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var employeeId = document.getElementById('employeeId').value;
+  // Here, you would typically send the employee ID to your backend server to log the attendance
+  // For simplicity, let's just display a message here
+  document.getElementById('message').textContent = 'Attendance logged for Employee ID: ' + employeeId;
+});
+
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

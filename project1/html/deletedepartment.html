@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Department</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 120px;
+}
+
+input[type="text"],
+select {
+  width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+}
+
+  </style>
+</head>
+<body>
+  <h2>Delete Department for Employee</h2>
+  <form id="deleteForm">
+    <label for="employeeId">Employee ID:</label>
+    <input type="text" id="employeeId" name="employeeId" required><br>
+    <label for="department">Department:</label>
+    <select id="department" name="department" required>
+      <option value="HR">HR</option>
+      <option value="Finance">Finance</option>
+      <option value="IT">IT</option>
+      <!-- Add more departments as needed -->
+    </select><br>
+    <button type="submit">Delete Department</button>
+  </form>
+
+  <script>
+    document.getElementById('deleteForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Retrieve form data
+  var employeeId = document.getElementById('employeeId').value;
+  var department = document.getElementById('department').value;
+
+  // Simulate deletion process
+  // Replace this with your actual deletion logic
+  if (confirm(`Are you sure you want to delete ${department} department for employee ID ${employeeId}?`)) {
+    alert(`Department ${department} deleted for employee ID ${employeeId}.`);
+    // You can perform further actions here like sending deletion request to server
+    // or updating UI
+  }
+});
+
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

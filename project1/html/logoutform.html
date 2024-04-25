@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Attendance & Logout</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="text"], input[type="password"], input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Employee Attendance & Logout</h2>
+    <form id="attendanceForm">
+        <div class="form-group">
+            <label for="employeeId">Employee ID:</label>
+            <input type="text" id="employeeId" name="employeeId" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Login">
+        </div>
+    </form>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+    function logout() {
+        // Your logout functionality here
+        alert("Logged out successfully!");
+    }
+
+    document.getElementById("attendanceForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var employeeId = document.getElementById("employeeId").value;
+        // Here you can handle the submission, e.g., send it to a server for processing
+        alert("Employee ID: " + employeeId + " logged in!");
+        // You can also redirect the user to another page after successful login
+        // window.location.href = "dashboard.html";
+    });
+</script>
+
+</body>
+</html>
